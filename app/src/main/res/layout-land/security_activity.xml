@@ -12,39 +12,38 @@
         android:id="@+id/Puerta"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
         android:text="Puerta X"
         android:textSize="30sp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerInParent="true" />
 
     <LinearLayout
         android:id="@+id/Panel_botones"
         android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/Puerta"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
         android:layout_width="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
         android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         android:weightSum="3">
 
         <Button
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:onClick="comando1"
             android:text="Comando1"/>
         <Button
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:onClick="comando2"
             android:text="Comando2"/>
         <Button
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:onClick="comando3"
             android:text="Comando3"/>
 

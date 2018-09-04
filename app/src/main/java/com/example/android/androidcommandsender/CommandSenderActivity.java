@@ -17,9 +17,9 @@ import java.nio.charset.Charset;
 
 public class CommandSenderActivity extends AppCompatActivity {
 
-    String host = "192.168.1.46";
-    String user = "idiota";
-    String password = "1234";
+    public String host = "192.168.1.46";
+    public String user = "idiota";
+    public String password = "1234";
 
     private class connectAsyncTask extends AsyncTask<String, Void, String>{
 
