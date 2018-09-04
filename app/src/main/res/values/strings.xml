@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AndroidCommandSender</string>
+    <string name="instrucciones">
+        Coloque su dedo en el lector de huellas para continuar
+    </string>
+    <string name="nombre_security_activity">Autenticación de Huella Digital</string>
+</resources>
