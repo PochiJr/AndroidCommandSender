@@ -4,6 +4,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 
 import com.jcraft.jsch.Channel;
 import com.jcraft.jsch.ChannelExec;
@@ -17,7 +18,8 @@ import java.nio.charset.Charset;
 
 public class CommandSenderActivity extends AppCompatActivity {
 
-    public String host = "192.168.1.37";
+    EditText IPEditText = (EditText) findViewById(R.id.IPEditText);
+    public String host = IPEditText.getText().toString();
     public String user = "idiota";
     public String password = "1234";
 
