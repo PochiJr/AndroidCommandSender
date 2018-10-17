@@ -1,56 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:weightSum="15"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="100dp"
+
     tools:context="com.example.android.androidcommandsender.CommandSenderActivity">
 
     <TextView
+        android:paddingTop="30dp"
+        android:layout_weight="3"
+        android:layout_gravity="center"
         android:id="@+id/Puerta"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_height="0dp"
         android:text="Puerta X"
         android:textSize="30sp"
-        android:layout_centerHorizontal="true" />
+        />
 
     <LinearLayout
+        android:layout_weight="5"
         android:id="@+id/Panel_botones"
-        android:layout_centerInParent="true"
         android:layout_marginTop="20dp"
-        android:layout_below="@+id/Puerta"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="100dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginBottom="30dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         android:weightSum="3">
 
         <Button
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:onClick="comando1"
             android:text="Comando1"/>
         <Button
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:onClick="comando2"
             android:text="Comando2"/>
         <Button
             android:layout_weight="1"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:onClick="comando3"
             android:text="Comando3"/>
 
     </LinearLayout>
 
+    <Button
+        android:id="@+id/initConnection"
+        android:onClick="initConnection"
+        android:layout_gravity="center"
+        android:layout_weight="2"
+        android:background="@color/green"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"
+        android:text="INICIAR CONEXIÓN"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        />
 
 
 
-</RelativeLayout>
+
+</LinearLayout>

@@ -17,15 +17,17 @@ import java.nio.charset.Charset;
 
 public class CommandSenderActivity extends AppCompatActivity {
 
-    public String host = "192.168.1.46";
+    public String host = "192.168.1.37";
     public String user = "idiota";
     public String password = "1234";
 
-    private class connectAsyncTask extends AsyncTask<String, Void, String>{
+    private class connectAsyncTask extends AsyncTask<String, Void, String> {
+
 
         @Override
-        protected String doInBackground (String... cmd){
+        protected String doInBackground(String... cmd) {
             // Se conecta al servidor SSH.
+
             StringBuilder output = new StringBuilder();
             try {
                 java.util.Properties config = new java.util.Properties();
@@ -38,9 +40,9 @@ public class CommandSenderActivity extends AppCompatActivity {
                 System.out.println("Connected");
 
                 Channel channel = session.openChannel("exec");
-                ((ChannelExec)channel).setCommand(cmd[0]);
+                ((ChannelExec) channel).setCommand(cmd[0]);
                 channel.setInputStream(null);
-                ((ChannelExec)channel).setErrStream(System.err);
+                ((ChannelExec) channel).setErrStream(System.err);
 
                 InputStream in = channel.getInputStream();
                 channel.connect();
@@ -51,7 +53,7 @@ public class CommandSenderActivity extends AppCompatActivity {
                     InputStreamReader inputStreamReader = new InputStreamReader(in, Charset.forName("UTF-8"));
                     BufferedReader reader = new BufferedReader(inputStreamReader);
                     String line = reader.readLine();
-                    while (line != null){
+                    while (line != null) {
                         output.append(line);
                         line = reader.readLine();
                     }
@@ -60,7 +62,7 @@ public class CommandSenderActivity extends AppCompatActivity {
                 session.disconnect();
                 System.out.println("DONE");
 
-            } catch (Exception e){
+            } catch (Exception e) {
                 e.printStackTrace();
             }
             return output.toString();
@@ -68,18 +70,22 @@ public class CommandSenderActivity extends AppCompatActivity {
 
     }
 
+
     public void comando1(View v) {
         connectAsyncTask task = new connectAsyncTask();
         task.execute("ipconfig");
     }
+
     public void comando2(View v) {
         connectAsyncTask task = new connectAsyncTask();
         task.execute("cmd /c echo Soy magi");
     }
+
     public void comando3(View v) {
         connectAsyncTask task = new connectAsyncTask();
         task.execute("help");
     }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
